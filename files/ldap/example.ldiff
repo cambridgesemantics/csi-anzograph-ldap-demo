@@ -1,0 +1,28 @@
+version: 1
+
+dn: cn=qauser,dc=anzograph,dc=com
+objectClass: person
+objectClass: top
+cn: qauser
+sn: qauser
+userPassword:: e1NIQX10RVNzQm1FL3lOWTNsYjZhMEw2dlZRRVpOcXc9
+
+dn: cn=qa,dc=anzograph,dc=com
+objectClass: organizationalRole
+objectClass: top
+cn: qa
+roleOccupant: cn=qauser,dc=anzograph,dc=com
+
+dn: cn=devuser,dc=anzograph,dc=com
+objectClass: person
+objectClass: top
+cn: devuser
+sn: devuser
+userPassword:: e1NIQX10RVNzQm1FL3lOWTNsYjZhMEw2dlZRRVpOcXc9
+
+dn: cn=developer,dc=anzograph,dc=com
+objectClass: organizationalRole
+objectClass: top
+cn: developer
+roleOccupant: cn=devuser,dc=anzograph,dc=com
+

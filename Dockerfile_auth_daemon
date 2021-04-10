@@ -1,0 +1,12 @@
+FROM python:3.8.7-slim-buster
+
+ENV VIRTUAL_ENV=/opt/venv
+RUN python3 -m venv $VIRTUAL_ENV
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+
+COPY files/ldap/auth_daemon/requirements.txt .
+RUN pip install -r requirements.txt
+
+COPY files/ldap/auth_daemon/auth_daemon.py .
+ENV FLASK_APP=auth_daemon.py
+CMD ["flask","run","--host","0.0.0.0"]
